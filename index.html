@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Portofolio Me</title>
+    <!-- Bootstrap 5 + Icons + Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNeon">
+
+    <!-- Navbar -->
+    <nav id="navbarNeon" class="navbar navbar-expand-lg fixed-top neon-nav py-3">
+        <div class="container">
+            <a class="navbar-brand neon-text fw-bold" href="#">PORTFOLIO <span class="small-glow">ME</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNeonContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNeonContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
+                    <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">SKILL ME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS ME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">CONTACT ME</a></li>
+                </ul>
+                <a href="https://github.com/yourusername/neofolio" target="_blank" class="btn btn-outline-neon ms-lg-3"><i class="bi bi-github"></i> REPO</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 order-2 order-lg-1">
+                    <div class="hero-badge mb-3"><span class="glow-badge">⚡ PORTFOLIO SIDIK MAULANA</span></div>
+                  <h1 class="display-2 fw-bold neon-text-main">I'm <span class="txt-rotate" data-period="2000" data-rotate='[ "Vibe Code Alchemist", "Fullstack Developer", "Front-End Developer", "Backend Developer", "Bangun dunia dengan saya sang vibe code alchemist" ]'></span></h1>
+                    <p class="lead text-light-80 mt-3">Dengan <strong class="neon-glow">HTML, CSS, JS, PHP, Python, Bootstrap</strong>, saya siap membangun <strong class="neon-glow">dunia digital masa depan</strong> Anda. <br>Kolaborasi sekarang – mari kita ciptakan sesuatu yang <strong class="neon-glow">nyala dan tak terlupakan</strong>.</p>
+                    <div class="hero-buttons mt-4">
+                        <a href="#contact" class="btn btn-primary-neon me-3"><i class="bi bi-cpu"></i> Hubungi AI</a>
+                        <a href="https://vercel.com" target="_blank" class="btn btn-outline-light"><i class="bi bi-lightning-charge"></i> Live on Vercel</a>
+                    </div>
+                    <div class="tech-stack mt-5 d-flex flex-wrap gap-3">
+                        <span class="tech-chip"><i class="bi bi-filetype-html"></i> HTML5</span>
+                        <span class="tech-chip"><i class="bi bi-filetype-css"></i> CSS3</span>
+                        <span class="tech-chip"><i class="bi bi-filetype-js"></i> JS</span>
+                        <span class="tech-chip"><i class="bi bi-filetype-php"></i> PHP</span>
+                        <span class="tech-chip"><i class="bi bi-filetype-py"></i> Python</span>
+                        <span class="tech-chip"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+                        <span class="tech-chip"><i class="bi bi-github"></i> GitHub</span>
+                        <span class="tech-chip"><i class="bi bi-cloud-check"></i> Vercel</span>
+                    </div>
+                </div>
+                <div class="col-lg-5 order-1 order-lg-2 text-center mb-5 mb-lg-0">
+                    <div class="hologram-card">
+                        <div class="glow-sphere"></div>
+                        <img src="https://placehold.co/400x400/0a0a2a/00f2ff?text=◈+VIBE+CODE+◈" alt="future avatar" class="img-fluid futuristic-avatar">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><i class="bi bi-chevron-double-down"></i></div>
+    </section>
+
+    <!-- Skills Section (dynamic via Python API) -->
+    <section id="skills" class="skills-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title neon-title"><i class="bi bi-motherboard"></i> SKILL ME</h2>
+                <div class="line-glow mx-auto"></div>
+            </div>
+            <div class="row g-4" id="skills-container">
+                <div class="col-12 text-center text-white-50">Memuat data skill dari Python API...</div>
+            </div>
+            <div class="alert alert-neon mt-5 text-center" role="alert">
+                <i class="bi bi-binoculars"></i> Dynamic API call ke Python (Vercel Serverless) menampilkan skill tambahan + realtime vibe
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+        <!-- Projects - Real Projects Showcase -->
+    <section id="projects" class="projects-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title neon-title"><i class="bi bi-grid-3x3-gap-fill"></i> PROJECTS ME</h2>
+                <div class="line-glow mx-auto"></div>
+                <p class="text-light-80 mt-3">Berikut adalah proyek nyata yang telah saya bangun – dari layanan publik, sistem bisnis, hingga portofolio interaktif.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Virtual Tour Kantor Kecamatan Cimahi Tengah -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-card neon-card h-100">
+                        <div class="card-icon"><i class="bi bi-building"></i></div>
+                        <h4>Virtual Tour Kantor Kecamatan Cimahi Tengah</h4>
+                        <p>Eksplorasi 360° interaktif untuk memudahkan masyarakat mengenali lingkungan kantor kecamatan. Meningkatkan aksesibilitas dan transparansi pelayanan publik.</p>
+                        <div class="stack-icons"><span>Three.js</span><span>HTML5</span><span>CSS3</span><span>JS</span></div>
+                    </div>
+                </div>
+                <!-- Web Kasir - Projek Sekolah -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-card neon-card h-100">
+                        <div class="card-icon"><i class="bi bi-calculator-fill"></i></div>
+                        <h4>Web Kasir (Sistem POS)</h4>
+                        <p>Aplikasi kasir berbasis web dengan manajemen produk, transaksi, dan laporan penjualan. Dikembangkan sebagai proyek sekolah dengan PHP & MySQL.</p>
+                        <div class="stack-icons"><span>PHP</span><span>MySQL</span><span>Bootstrap</span><span>JS</span></div>
+                    </div>
+                </div>
+                <!-- Web Lelang - Projek Sekolah -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-card neon-card h-100">
+                        <div class="card-icon"><i class="bi bi-hammer"></i></div>
+                        <h4>Web Lelang (Auction System)</h4>
+                        <p>Platform lelang online real-time dengan fitur penawaran, countdown, dan manajemen peserta. Proyek akhir yang menguji logika backend & keamanan data.</p>
+                        <div class="stack-icons"><span>PHP</span><span>JavaScript</span><span>AJAX</span><span>Bootstrap</span></div>
+                    </div>
+                </div>
+                <!-- Portofolio Neon Ini -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-card neon-card h-100">
+                        <div class="card-icon"><i class="bi bi-stars"></i></div>
+                        <h4>Portfolio Me</h4>
+                        <p>Portofolio futuristik dengan efek neon, responsif, terintegrasi Python API & PHP handler. Menunjukkan kemampuan full-stack modern.</p>
+                        <div class="stack-icons"><span>HTML/CSS/JS</span><span>Python</span><span>PHP</span><span>Vercel</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#contact" class="btn btn-primary-neon"><i class="bi bi-chat-dots"></i> Tertarik kolaborasi? Hubungi saya</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form + PHP integration -->
+       <!-- Contact Form + PHP Email Integration -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <h2 class="neon-title mb-4"><i class="bi bi-envelope-paper-fill"></i> LET'S CONNECT // KOLABORASI</h2>
+                    <p class="text-light-80">Tertarik mengajak saya membangun proyek Anda? Isi formulir di samping, pesan akan langsung masuk ke email saya di <strong>sidikmaulan8272@gmail.com</strong>. Saya akan membalas dalam waktu kurang dari 24 jam.</p>
+                    <div class="futuristic-status mt-4">
+                        <div class="status-led green"></div> <span class="ms-2"><strong>Email aktif</strong> :: Pesan langsung ke kotak masuk saya</span><br>
+                        <div class="status-led blue"></div> <span class="ms-2"><strong>PHP Backend</strong> :: handler.php siap memproses & mengirim email</span><br>
+                        <div class="status-led purple"></div> <span class="ms-2"><strong>Python API</strong> :: /api/skills menyuplai skill matrix dinamis</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <form id="neonContactForm" class="neon-form p-4">
+                        <div class="mb-3">
+                            <label class="form-label">NAMA LENGKAP</label>
+                            <input type="text" class="form-control bg-dark text-white neon-input" id="name" placeholder="Siapa nama Anda?" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">EMAIL ANDA</label>
+                            <input type="email" class="form-control bg-dark text-white neon-input" id="email" placeholder="email@domain.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">PESAN / KOLABORASI</label>
+                            <textarea class="form-control bg-dark text-white neon-input" rows="3" id="message" placeholder="Ceritakan ide atau proyek yang ingin kita bangun bersama..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-neon w-100"><i class="bi bi-send-check"></i> KIRIM PESAN KE EMAIL SAYA</button>
+                        <p class="mt-3 small text-muted text-center">✅ Pesan akan dikirim langsung ke <strong>sidikmaulan8272@gmail.com</strong> melalui server PHP. Saya akan segera merespon.</p>
+                    </form>
+                    <div id="formFeedback" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-futuristic py-4">
+        <div class="container text-center">
+            <p class="mb-0">⚡ 2025 NEO_VIBE_PORTFOLIO | HTML | CSS | JS | PHP | PYTHON | BOOTSTRAP | GITHUB | VERCEL ⚡</p>
+            <p class="small glow-text">Deploy with <i class="bi bi-github"></i> + <i class="bi bi-lightning-charge"></i> Vercel | All skills shining in neon grid</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
