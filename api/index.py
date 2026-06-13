@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # mengizinkan akses dari frontend
+CORS(app)
 
 @app.route('/api/skills', methods=['GET'])
 def get_skills():
@@ -22,6 +22,5 @@ def get_skills():
 def health():
     return jsonify({"status": "neon_online", "version": "futuristic_v2"})
 
-# Untuk development lokal
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

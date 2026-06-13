@@ -3,7 +3,6 @@
     --neon-pink: #ff00ea;
     --neon-purple: #b100ff;
     --dark-bg: #0a0a1a;
-    --glow-intensity: 0 0 8px;
 }
 
 * {
@@ -238,6 +237,7 @@ body {
         font-size: 2.5rem;
     }
 }
+
 /* Efek untuk modal AI futuristik */
 .swal2-popup {
     border: 2px solid var(--neon-cyan);

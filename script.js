@@ -50,7 +50,6 @@ window.onload = function() {
           new TxtRotate(elements[i], JSON.parse(toRotate), period);
         }
     }
-    // Load skills from Python API
     loadSkillsFromPython();
 };
 

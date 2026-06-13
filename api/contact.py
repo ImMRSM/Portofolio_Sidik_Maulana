@@ -16,11 +16,12 @@ def send_email():
         if not name or not email or not message:
             return jsonify({'status': 'error', 'message': 'Semua field harus diisi.'}), 400
 
+        # Ambil environment variables dari Vercel
         sender_email = os.environ.get('GMAIL_USER')
         sender_password = os.environ.get('GMAIL_PASS')
 
         if not sender_email or not sender_password:
-            return jsonify({'status': 'error', 'message': 'Konfigurasi email belum diatur.'}), 500
+            return jsonify({'status': 'error', 'message': 'Konfigurasi email belum diatur. Hubungi admin.'}), 500
 
         msg = EmailMessage()
         msg.set_content(f"Nama: {name}\nEmail: {email}\nPesan:\n{message}")
@@ -35,10 +36,11 @@ def send_email():
             server.send_message(msg)
 
         return jsonify({'status': 'success', 'message': f"Pesan terkirim, {name}. Saya akan membalas ke {email}."})
-
     except Exception as e:
         print("Error:", e)
         return jsonify({'status': 'error', 'message': 'Terjadi kesalahan. Coba lagi nanti.'}), 500
 
-def handler(request):
-    return app(request)
+# Untuk Vercel, cukup export app (secara otomatis)
+# Tidak perlu fungsi handler tambahan
+if __name__ == '__main__':
+    app.run()

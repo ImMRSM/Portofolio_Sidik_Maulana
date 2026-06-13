@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Portofolio Me</title>
+    <title>Portofolio Sidik Maulana</title>
     <!-- Bootstrap 5 + Icons + Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -59,7 +59,7 @@
                 <div class="col-lg-5 order-1 order-lg-2 text-center mb-5 mb-lg-0">
                     <div class="hologram-card">
                         <div class="glow-sphere"></div>
-                       <img src="https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Coding Alchemist" class="img-fluid futuristic-avatar" style="border-radius: 50%; border: 2px solid #00f3ff; box-shadow: 0 0 20px #00f3ff;">
+                        <img src="https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Coding Alchemist" class="img-fluid futuristic-avatar" style="border-radius: 50%; border: 2px solid #00f3ff; box-shadow: 0 0 20px #00f3ff;">
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
         </div>
     </section>
 
-    <!-- Contact Form + PHP integration -->
+    <!-- Contact Form -->
     <section id="contact" class="contact-section py-5">
         <div class="container">
             <div class="row g-5">
@@ -140,7 +140,7 @@
                     <p class="text-light-80">Tertarik mengajak saya membangun proyek Anda? Isi formulir di samping, pesan akan langsung masuk ke email saya di <strong>sidikmaulan8272@gmail.com</strong>. Saya akan membalas dalam waktu kurang dari 24 jam.</p>
                     <div class="futuristic-status mt-4">
                         <div class="status-led green"></div> <span class="ms-2"><strong>Email aktif</strong> :: Pesan langsung ke kotak masuk saya</span><br>
-                        <div class="status-led blue"></div> <span class="ms-2"><strong>PHP Backend</strong> :: handler.php siap memproses & mengirim email</span><br>
+                        <div class="status-led blue"></div> <span class="ms-2"><strong>Python Backend</strong> :: API endpoint mengirim email via Gmail SMTP</span><br>
                         <div class="status-led purple"></div> <span class="ms-2"><strong>Python API</strong> :: /api/skills menyuplai skill matrix dinamis</span>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
                             <textarea class="form-control bg-dark text-white neon-input" rows="3" id="message" placeholder="Ceritakan ide atau proyek yang ingin kita bangun bersama..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary-neon w-100"><i class="bi bi-send-check"></i> KIRIM PESAN KE EMAIL SAYA</button>
-                        <p class="mt-3 small text-muted text-center">✅ Pesan akan dikirim langsung ke <strong>sidikmaulan8272@gmail.com</strong> melalui server PHP. Saya akan segera merespon.</p>
+                        <p class="mt-3 small text-muted text-center">✅ Pesan akan dikirim langsung ke <strong>sidikmaulan8272@gmail.com</strong> melalui server Python. Saya akan segera merespon.</p>
                     </form>
                     <div id="formFeedback" class="mt-3"></div>
                 </div>
@@ -177,79 +177,73 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
- <script>
-    // Chatbot AI futuristik untuk tombol Hubungi AI
-    document.getElementById('contactAiBtn').addEventListener('click', async () => {
-        // Tampilkan chat pertama dari AI
-        const { value: step } = await Swal.fire({
-            title: '🤖 <span class="neon-text">NEO ASSISTANT</span>',
-            html: `
-                <div class="ai-chat-bubble" style="text-align: left; background: rgba(0,243,255,0.1); padding: 12px; border-radius: 20px; border-left: 4px solid #00f3ff; margin-bottom: 15px;">
-                    <i class="bi bi-cpu" style="color: #00f3ff;"></i> <strong>AI Masa Depan:</strong><br>
-                    Halo, saya asisten virtual Sidik Maulana. 👋<br>
-                    Ada yang bisa saya bantu? Silakan pilih opsi di bawah.
-                </div>
-                <div class="ai-options" style="display: flex; flex-direction: column; gap: 12px;">
-                    <button id="aiOptionHow" class="btn btn-outline-neon w-100" style="border-radius: 40px;">🔮 Bagaimana cara menghubungi Sidik Maulana?</button>
-                </div>
-            `,
-            showConfirmButton: false,
-            showCancelButton: true,
-            cancelButtonText: 'Tutup',
-            background: '#0a0a1a',
-            color: '#e0e0ff',
-            backdrop: `
-                rgba(0,0,0,0.8)
-                url("https://media.giphy.com/media/3o7abB06u9bNzA8LC8/giphy.gif") center/cover no-repeat
-            `,
-            didOpen: () => {
-                // Event listener untuk tombol di dalam modal
-                document.getElementById('aiOptionHow').addEventListener('click', async () => {
-                    Swal.fire({
-                        title: '📡 <span class="neon-text">CARA HUBUNGI SIDIK</span>',
-                        html: `
-                            <div class="ai-chat-bubble" style="text-align: left; background: rgba(255,0,234,0.1); padding: 12px; border-radius: 20px; border-left: 4px solid #ff00ea; margin-bottom: 15px;">
-                                <i class="bi bi-stars" style="color: #ff00ea;"></i> <strong>AI:</strong><br>
-                                Sidik Maulana dapat dihubungi melalui dua jalur:<br><br>
-                                ✨ <strong>1. Form Kontak Cepat</strong> → langsung geser ke halaman <strong>CONTACT ME</strong>.<br>
-                                📧 <strong>2. Email Langsung</strong> → buka aplikasi email dengan alamat <strong>sidikmaulan8272@gmail.com</strong>.<br><br>
-                                Pilih metode yang Anda inginkan.
-                            </div>
-                            <div class="d-flex gap-3 mt-3 flex-wrap">
-                                <button id="gotoContactBtn" class="btn btn-primary-neon flex-fill"><i class="bi bi-chat-dots"></i> Ke Form Contact</button>
-                                <button id="emailBtn" class="btn btn-outline-neon flex-fill"><i class="bi bi-envelope-paper"></i> Email Sekarang</button>
-                            </div>
-                        `,
-                        showConfirmButton: false,
-                        showCancelButton: true,
-                        cancelButtonText: 'Kembali',
-                        background: '#0a0a1a',
-                        color: '#e0e0ff',
-                        didOpen: () => {
-                            document.getElementById('gotoContactBtn').addEventListener('click', () => {
-                                Swal.close();
-                                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-                                // Tampilkan toast notifikasi
-                                Swal.fire({
-                                    title: '✨ Digeser ke Contact',
-                                    text: 'Silakan isi formulir di bawah untuk mengirim pesan.',
-                                    icon: 'success',
-                                    timer: 2000,
-                                    showConfirmButton: false,
-                                    background: '#0a0a1a',
-                                    color: '#00f3ff'
+    <script>
+        // Chatbot AI futuristik untuk tombol Hubungi AI
+        document.getElementById('contactAiBtn').addEventListener('click', async () => {
+            await Swal.fire({
+                title: '🤖 <span class="neon-text">NEO ASSISTANT</span>',
+                html: `
+                    <div class="ai-chat-bubble" style="text-align: left; background: rgba(0,243,255,0.1); padding: 12px; border-radius: 20px; border-left: 4px solid #00f3ff; margin-bottom: 15px;">
+                        <i class="bi bi-cpu" style="color: #00f3ff;"></i> <strong>AI Masa Depan:</strong><br>
+                        Halo, saya asisten virtual Sidik Maulana. 👋<br>
+                        Ada yang bisa saya bantu? Silakan pilih opsi di bawah.
+                    </div>
+                    <div class="ai-options" style="display: flex; flex-direction: column; gap: 12px;">
+                        <button id="aiOptionHow" class="btn btn-outline-neon w-100" style="border-radius: 40px;">🔮 Bagaimana cara menghubungi Sidik Maulana?</button>
+                    </div>
+                `,
+                showConfirmButton: false,
+                showCancelButton: true,
+                cancelButtonText: 'Tutup',
+                background: '#0a0a1a',
+                color: '#e0e0ff',
+                backdrop: `rgba(0,0,0,0.8) url("https://media.giphy.com/media/3o7abB06u9bNzA8LC8/giphy.gif") center/cover no-repeat`,
+                didOpen: () => {
+                    document.getElementById('aiOptionHow').addEventListener('click', async () => {
+                        Swal.fire({
+                            title: '📡 <span class="neon-text">CARA HUBUNGI SIDIK</span>',
+                            html: `
+                                <div class="ai-chat-bubble" style="text-align: left; background: rgba(255,0,234,0.1); padding: 12px; border-radius: 20px; border-left: 4px solid #ff00ea; margin-bottom: 15px;">
+                                    <i class="bi bi-stars" style="color: #ff00ea;"></i> <strong>AI:</strong><br>
+                                    Sidik Maulana dapat dihubungi melalui dua jalur:<br><br>
+                                    ✨ <strong>1. Form Kontak Cepat</strong> → langsung geser ke halaman <strong>CONTACT ME</strong>.<br>
+                                    📧 <strong>2. Email Langsung</strong> → buka aplikasi email dengan alamat <strong>sidikmaulan8272@gmail.com</strong>.<br><br>
+                                    Pilih metode yang Anda inginkan.
+                                </div>
+                                <div class="d-flex gap-3 mt-3 flex-wrap">
+                                    <button id="gotoContactBtn" class="btn btn-primary-neon flex-fill"><i class="bi bi-chat-dots"></i> Ke Form Contact</button>
+                                    <button id="emailBtn" class="btn btn-outline-neon flex-fill"><i class="bi bi-envelope-paper"></i> Email Sekarang</button>
+                                </div>
+                            `,
+                            showConfirmButton: false,
+                            showCancelButton: true,
+                            cancelButtonText: 'Kembali',
+                            background: '#0a0a1a',
+                            color: '#e0e0ff',
+                            didOpen: () => {
+                                document.getElementById('gotoContactBtn').addEventListener('click', () => {
+                                    Swal.close();
+                                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                                    Swal.fire({
+                                        title: '✨ Digeser ke Contact',
+                                        text: 'Silakan isi formulir di bawah untuk mengirim pesan.',
+                                        icon: 'success',
+                                        timer: 2000,
+                                        showConfirmButton: false,
+                                        background: '#0a0a1a',
+                                        color: '#00f3ff'
+                                    });
                                 });
-                            });
-                            document.getElementById('emailBtn').addEventListener('click', () => {
-                                window.location.href = 'mailto:sidikmaulan8272@gmail.com?subject=Portofolio%20Contact&body=Halo%20Sidik%2C%20saya%20tertarik%20untuk%20berkolaborasi.%0A%0ATolong%20info%20lebih%20lanjut.';
-                                Swal.close();
-                            });
-                        }
+                                document.getElementById('emailBtn').addEventListener('click', () => {
+                                    window.location.href = 'mailto:sidikmaulan8272@gmail.com?subject=Portofolio%20Contact&body=Halo%20Sidik%2C%20saya%20tertarik%20untuk%20berkolaborasi.%0A%0ATolong%20info%20lebih%20lanjut.';
+                                    Swal.close();
+                                });
+                            }
+                        });
                     });
-                });
-            }
+                }
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
