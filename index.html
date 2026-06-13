@@ -177,28 +177,79 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
-    <script>
-        // Handle tombol Hubungi AI
-        document.getElementById('contactAiBtn').addEventListener('click', function() {
-            Swal.fire({
-                title: 'Hubungi Saya',
-                text: 'Kirim pesan ke email saya: sidikmaulan8272@gmail.com',
-                icon: 'info',
-                showCancelButton: true,
-                confirmButtonText: 'Buka Email',
-                cancelButtonText: 'Ke Halaman Contact',
-                background: '#0a0a1a',
-                color: '#e0e0ff',
-                confirmButtonColor: '#00f3ff',
-                cancelButtonColor: '#b100ff'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = 'mailto:sidikmaulan8272@gmail.com?subject=Portofolio%20Contact&body=Halo%20Sidik%2C%20saya%20tertarik%20untuk%20berkolaborasi.';
-                } else if (result.dismiss === Swal.DismissReason.cancel) {
-                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+ <script>
+    // Chatbot AI futuristik untuk tombol Hubungi AI
+    document.getElementById('contactAiBtn').addEventListener('click', async () => {
+        // Tampilkan chat pertama dari AI
+        const { value: step } = await Swal.fire({
+            title: '🤖 <span class="neon-text">NEO ASSISTANT</span>',
+            html: `
+                <div class="ai-chat-bubble" style="text-align: left; background: rgba(0,243,255,0.1); padding: 12px; border-radius: 20px; border-left: 4px solid #00f3ff; margin-bottom: 15px;">
+                    <i class="bi bi-cpu" style="color: #00f3ff;"></i> <strong>AI Masa Depan:</strong><br>
+                    Halo, saya asisten virtual Sidik Maulana. 👋<br>
+                    Ada yang bisa saya bantu? Silakan pilih opsi di bawah.
+                </div>
+                <div class="ai-options" style="display: flex; flex-direction: column; gap: 12px;">
+                    <button id="aiOptionHow" class="btn btn-outline-neon w-100" style="border-radius: 40px;">🔮 Bagaimana cara menghubungi Sidik Maulana?</button>
+                </div>
+            `,
+            showConfirmButton: false,
+            showCancelButton: true,
+            cancelButtonText: 'Tutup',
+            background: '#0a0a1a',
+            color: '#e0e0ff',
+            backdrop: `
+                rgba(0,0,0,0.8)
+                url("https://media.giphy.com/media/3o7abB06u9bNzA8LC8/giphy.gif") center/cover no-repeat
+            `,
+            didOpen: () => {
+                // Event listener untuk tombol di dalam modal
+                document.getElementById('aiOptionHow').addEventListener('click', async () => {
+                    Swal.fire({
+                        title: '📡 <span class="neon-text">CARA HUBUNGI SIDIK</span>',
+                        html: `
+                            <div class="ai-chat-bubble" style="text-align: left; background: rgba(255,0,234,0.1); padding: 12px; border-radius: 20px; border-left: 4px solid #ff00ea; margin-bottom: 15px;">
+                                <i class="bi bi-stars" style="color: #ff00ea;"></i> <strong>AI:</strong><br>
+                                Sidik Maulana dapat dihubungi melalui dua jalur:<br><br>
+                                ✨ <strong>1. Form Kontak Cepat</strong> → langsung geser ke halaman <strong>CONTACT ME</strong>.<br>
+                                📧 <strong>2. Email Langsung</strong> → buka aplikasi email dengan alamat <strong>sidikmaulan8272@gmail.com</strong>.<br><br>
+                                Pilih metode yang Anda inginkan.
+                            </div>
+                            <div class="d-flex gap-3 mt-3 flex-wrap">
+                                <button id="gotoContactBtn" class="btn btn-primary-neon flex-fill"><i class="bi bi-chat-dots"></i> Ke Form Contact</button>
+                                <button id="emailBtn" class="btn btn-outline-neon flex-fill"><i class="bi bi-envelope-paper"></i> Email Sekarang</button>
+                            </div>
+                        `,
+                        showConfirmButton: false,
+                        showCancelButton: true,
+                        cancelButtonText: 'Kembali',
+                        background: '#0a0a1a',
+                        color: '#e0e0ff',
+                        didOpen: () => {
+                            document.getElementById('gotoContactBtn').addEventListener('click', () => {
+                                Swal.close();
+                                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                                // Tampilkan toast notifikasi
+                                Swal.fire({
+                                    title: '✨ Digeser ke Contact',
+                                    text: 'Silakan isi formulir di bawah untuk mengirim pesan.',
+                                    icon: 'success',
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                    background: '#0a0a1a',
+                                    color: '#00f3ff'
+                                });
+                            });
+                            document.getElementById('emailBtn').addEventListener('click', () => {
+                                window.location.href = 'mailto:sidikmaulan8272@gmail.com?subject=Portofolio%20Contact&body=Halo%20Sidik%2C%20saya%20tertarik%20untuk%20berkolaborasi.%0A%0ATolong%20info%20lebih%20lanjut.';
+                                Swal.close();
+                            });
+                        }
+                    });
+                });
+            }
         });
-    </script>
+    });
+</script>
 </body>
 </html>
