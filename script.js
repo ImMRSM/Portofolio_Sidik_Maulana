@@ -54,20 +54,16 @@ window.onload = function() {
     loadSkillsFromPython();
 };
 
-// Fetch skill matrix dari Python endpoint (Vercel serverless)
 async function loadSkillsFromPython() {
     const container = document.getElementById('skills-container');
     container.innerHTML = '<div class="col-12 text-center text-info">Mengunduh data dari Python API ...</div>';
     try {
-        // Ganti dengan endpoint Python kamu jika deploy di Vercel, untuk local testing bisa gunakan mock
-        // Karena kita punya file api/index.py, kita panggil relative path /api/skills
-const response = await fetch('/api/skills');
+        const response = await fetch('/api/skills');
         if (!response.ok) throw new Error('API Python tidak merespon');
         const skills = await response.json();
         displaySkills(skills);
     } catch (error) {
         console.warn('Fallback ke static data karena:', error);
-        // fallback data (bila python belum running)
         const fallback = [
             { name: "PHP & Backend", icon: "bi-filetype-php", level: 90 },
             { name: "Python (Flask)", icon: "bi-filetype-py", level: 88 },
