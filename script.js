@@ -96,7 +96,7 @@ function displaySkills(skillsArray) {
     });
 }
 
-// Handle form submission ke PHP
+// Handle form submission ke Python API (Vercel)
 const contactForm = document.getElementById('neonContactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
@@ -111,14 +111,14 @@ if (contactForm) {
             return;
         }
 
-        feedbackDiv.innerHTML = '<div class="alert alert-info">Mengirim pesan ke handler PHP ...</div>';
+        feedbackDiv.innerHTML = '<div class="alert alert-info">Mengirim pesan ke server Python ...</div>';
         try {
             const formData = new FormData();
             formData.append('name', name);
             formData.append('email', email);
             formData.append('message', message);
 
-            const response = await fetch('handler.php', {
+            const response = await fetch('/api/contact', {
                 method: 'POST',
                 body: formData
             });
@@ -130,7 +130,7 @@ if (contactForm) {
                 feedbackDiv.innerHTML = `<div class="alert alert-danger">❌ ${result.message}</div>`;
             }
         } catch (err) {
-            feedbackDiv.innerHTML = `<div class="alert alert-danger">Gagal terhubung ke server PHP: ${err.message}</div>`;
+            feedbackDiv.innerHTML = `<div class="alert alert-danger">Gagal terhubung ke server: ${err.message}</div>`;
         }
     });
 }
